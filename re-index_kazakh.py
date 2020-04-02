@@ -1,0 +1,17 @@
+import pandas as pd
+
+df = pd.read_excel('Kazakhstan.xlsx', ignore_index=True)
+df_temp = df.reset_index()
+df_temp.to_excel("raw_data_kaz.xlsx")
+df2=df_temp.pivot(index='index', columns='SDESC.2' , values='JUL2019')
+df2.to_excel('July.xlsx')
+df3=df_temp.pivot(index='index', columns='SDESC.2', values='AUG2019')
+df3.to_excel('Aug.xlsx')
+df4=df_temp.pivot(index='index', columns='SDESC.2', values='SEP2019')
+df4.to_excel('Sep.xlsx')
+df5=df_temp.pivot(index='index', columns='SDESC.2', values='OCT2019')
+df5.to_excel('Oct.xlsx')
+df6=df_temp.pivot(index='index', columns='SDESC.2', values='NOV2019')
+df6.to_excel('Nov.xlsx')
+df7=df_temp.pivot(index='index', columns='SDESC.2', values='DEC2019')
+df7.to_excel('Dec.xlsx')
